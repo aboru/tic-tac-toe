@@ -31,4 +31,4 @@
   (display "3 ")(display (access board 0 2))(display "|")
   (display (access board 1 2))(display "|")(displayln (access board 2 2)))
 
-(show (create-board))
+(show (modify (create-board) 0 0 "X"))
