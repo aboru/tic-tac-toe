@@ -12,6 +12,8 @@
 
 |#
 
+(provide get-y-move get-x-move)
+
 (define (convert-input value)
   (cond
     [(or (eq? value (string->symbol "A")) (eq? value (string->symbol "a"))) 1]
@@ -28,5 +30,3 @@
   (display "please provide the move x coordinate: ")
   (let ([value (convert-input (read))])
     (if (not (eq? value #f)) (- value 1) (get-x-move))))
-
-(display (get-x-move))
