@@ -12,14 +12,15 @@
 |#
 
 (require "board-generator.rkt")
-
-(provide create-board access)
+(provide create-board access change-value)
 
 (define (create-board) (generate))
 
+(define (change-value) (modify))
+
 (define (access board x y)
   (list-ref (list-ref board y) x))
-
+  
 (define (show board)
   (displayln "  A B C")
   (display "1 ")(display (access board 0 0))(display "|")
@@ -30,5 +31,3 @@
   (displayln "  -----")
   (display "3 ")(display (access board 0 2))(display "|")
   (display (access board 1 2))(display "|")(displayln (access board 2 2)))
-
-(show (modify (create-board) 0 0 "X"))
