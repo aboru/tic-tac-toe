@@ -12,7 +12,9 @@
 
 |#
 
-(provide get-y-move get-x-move)
+(require "../board/board.rkt")
+
+(provide move)
 
 (define (convert-input value)
   (cond
@@ -30,3 +32,9 @@
   (display "please provide the move x coordinate: ")
   (let ([value (convert-input (read))])
     (if (not (eq? value #f)) (- value 1) (get-x-move))))
+
+(define (move board)
+  (let ([x (get-x-move)] [y (get-y-move)])
+    (if (not (eq? " " (access board x y)))
+      ((displayln "this location is already full") (move board))
+      (list x y))))
