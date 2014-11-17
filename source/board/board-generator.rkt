@@ -16,12 +16,12 @@
 (define (generate)
   (list (list " " " " " ") (list " " " " " ") (list " " " " " ")))
 
-(define (update vals x value)
+(define (update values x value)
   (cond
-    [(eq? x 0) (list value (list-ref vals 1) (list-ref vals 2))]
-    [(eq? x 1) (list (list-ref vals 0) value (list-ref vals 2))]
-    [(eq? x 2) (list (list-ref vals 0) (list-ref vals 1) value)]
-    [else vals]))
+    [(eq? x 0) (list value (list-ref values 1) (list-ref values 2))]
+    [(eq? x 1) (list (list-ref values 0) value (list-ref values 2))]
+    [(eq? x 2) (list (list-ref values 0) (list-ref values 1) value)]
+    [else values]))
 
 (define (modify board x y value)
   (cond
